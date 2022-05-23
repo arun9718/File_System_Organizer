@@ -5,3 +5,6 @@ function helpFn(){
   2. organize command <dir path>
   3. help command`);
 }
+module.exports = {
+  helpKey:helpFn
+}

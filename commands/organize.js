@@ -1,3 +1,11 @@
+let fs = require('fs');
+let path = require('path');
+let types = {
+    media: ["mp4", "mkv","jpg"],
+    archives: ['zip', '7z', 'rar', 'tar', 'gz', 'ar', 'iso', "xz"],
+    documents: ['docx', 'doc', 'pdf', 'xlsx', 'xls', 'odt', 'ods', 'odp', 'odg', 'odf', 'txt', 'ps', 'tex'],
+    app: ['exe', 'dmg', 'pkg', "deb"]
+};
 function OrganizeFn(dirPath){
 //  console.log("Organize command implemented");
 //1.input directory path
@@ -33,11 +41,25 @@ function OrganizeHelper(src,dest){
     let isFile=fs.lstatSync(childAddress).isFile();
     if(isFile){
       let category=getCategory(childNames[i]);
+      if(category==undefined){
+        category="others";
+      }
       console.log(childNames[i]+"-->"+category);
+      sendFiles(childAddress,dest,category);
 
     }
   }
 
+}
+function sendFiles(srcFilePath,dest,category){
+  let categoryPath=path.join(dest,category);
+  if(fs.existsSync(categoryPath)==false){
+    fs.mkdirSync(categoryPath);
+  }
+  let fileName = path.basename(srcFilePath);
+    let destFilePath = path.join(categoryPath, fileName);
+    fs.copyFileSync(srcFilePath, destFilePath);
+     console.log(fileName, "copied to ", category);
 }
 
 function getCategory(filename){
@@ -50,4 +72,8 @@ function getCategory(filename){
         return type;
     }
   }
+}
+
+module.exports = {
+  OrganizeKey:OrganizeFn
 }

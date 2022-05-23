@@ -1,6 +1,11 @@
+#!/usr/bin/env node
+
 let inputArr=process.argv.slice(2);
 let fs = require('fs');
 let path = require('path');
+let organizeObj = require("./commands/organize");
+let helpObj = require("./commands/help");
+let treeObj = require("./commands/tree");
 let types = {
     media: ["mp4", "mkv"],
     archives: ['zip', '7z', 'rar', 'tar', 'gz', 'ar', 'iso', "xz"],
@@ -17,13 +22,13 @@ let command=inputArr[0];
 
 switch(command){
   case "tree":
-    TreeFn(inputArr[1]);
+    treeObj.treeKey(inputArr[1]);
     break;
   case "organize":
-    OrganizeFn(inputArr[1]);
+    organizeObj.OrganizeKey(inputArr[1]);
     break;
   case "help":
-    helpFn();
+    helpObj.helpKey();
     break;
   default:
     console.log("Please 🙏 input valid command!");

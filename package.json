@@ -1,0 +1,23 @@
+{
+  "name": "File_System_Organizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arun9718/File_System_Organizer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "fileexplorer": "main.js"
+  },
+  "bugs": {
+    "url": "https://github.com/arun9718/File_System_Organizer/issues"
+  },
+  "homepage": "https://github.com/arun9718/File_System_Organizer#readme"
+}
