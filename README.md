@@ -1,6 +1,6 @@
 ## Project Name :-  Command Based File Management System
 This is a command based File Management System where you can display the directory structure,organize the directory\
-according to the type of the files.\
+according to the type of the files.
 
 ## Commands supported :-
 - main.js help <directory_path>
