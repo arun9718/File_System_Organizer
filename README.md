@@ -3,8 +3,8 @@ This is a command based File Management System where you can display the directo
 according to the type of the files.\
 
 ## Commands supported :-
-- help\
-- tree\
+- help
+- tree
 - organize
 
 ## Advantages 
