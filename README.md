@@ -3,9 +3,9 @@ This is a command based File Management System where you can display the directo
 according to the type of the files.\
 
 ## Commands supported :-
--help\
--tree\
--organize\
+- help\
+- tree\
+- organize
 
 ## Advantages 
 The organize function is a great help as certain folders we cannot organize like our "Download" folder and many such folder.\
